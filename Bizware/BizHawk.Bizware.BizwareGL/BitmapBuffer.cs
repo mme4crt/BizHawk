@@ -264,7 +264,7 @@ namespace BizHawk.Bizware.BizwareGL
 			if (options.AllowWrap && bitmap.PixelFormat == PixelFormat.Format32bppArgb)
 			{
 				Width = bitmap.Width;
-				Height = bitmap.Height;
+				Height = bitmap.Height; 
 				WrappedBitmap = bitmap;
 			}
 			else LoadInternal(null, bitmap, options);
@@ -277,7 +277,7 @@ namespace BizHawk.Bizware.BizwareGL
 		public BitmapBuffer(int width, int height, int[] pixels)
 		{
 			this.Pixels = pixels;
-			this.Width = width;
+			this.Width = width;	/* Get video info from here */
 			this.Height = height;
 		}
 
@@ -386,7 +386,7 @@ namespace BizHawk.Bizware.BizwareGL
 		public unsafe void LoadFrom(int width, int stride, int height, byte* data, BitmapLoadOptions options)
 		{
 			bool cleanup = options.CleanupAlpha0;
-			Width = width;
+			Width = width;		/* Get video info from here */
 			Height = height;
 			Pixels = new int[width * height];
 			fixed (int* pPtr = &Pixels[0])
