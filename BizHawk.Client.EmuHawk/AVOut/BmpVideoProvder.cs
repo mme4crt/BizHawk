@@ -33,7 +33,7 @@ namespace BizHawk.Client.EmuHawk
 			// is there a faster way to do this?
 			var data = _bmp.LockBits(new Rectangle(0, 0, _bmp.Width, _bmp.Height), System.Drawing.Imaging.ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
-			int[] ret = new int[_bmp.Width * _bmp.Height];
+			int[] ret = new int[_bmp.Width * _bmp.Height]; /* use these for MME4CRT */
 
 			// won't work if stride is messed up
 			System.Runtime.InteropServices.Marshal.Copy(data.Scan0, ret, 0, _bmp.Width * _bmp.Height);
