@@ -24,7 +24,7 @@
 
 		public int VirtualHeight => DefaultHeight;
 
-		public int BufferWidth => DefaultWidth;
+		public int BufferWidth => DefaultWidth;  /* maybe here */
 
 		public int BufferHeight => DefaultHeight;
 
